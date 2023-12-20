@@ -13,6 +13,7 @@
     "chromedriver": "^120.0.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "wdio",
+    "test:ebay": "wdio --cucumberOpts.tags=@ebaySearch"
   }
 }
