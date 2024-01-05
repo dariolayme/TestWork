@@ -13,7 +13,7 @@ class BuscadorEbay extends PageEbay {
     }
   
     get results() {
-      return $$('.s-item');
+      return $('//h1[@class="srp-controls__count-heading"]/span[1]');
     }
 
     
@@ -24,9 +24,8 @@ class BuscadorEbay extends PageEbay {
     }
 
     async cantidadDeResultados(){
-      //await this.results.length;
-      const searchResults = await $$('.s-item');
-    return searchResults.length;
+      const resultadosDeBusqueda = await this.results.getText();
+      return resultadosDeBusqueda;
     }
   
 
