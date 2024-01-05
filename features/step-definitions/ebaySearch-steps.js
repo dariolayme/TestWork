@@ -8,16 +8,16 @@ const pages = {
 }
 
 
-Given('El usuario esta en la homepage de eBay', () => {
+Given('Estoy en la homepage de eBay', () => {
   BuscadorEbay.open( )
 });
 
-When(/^El usuario busca (\w+)$/, async (producto) => {
+When(/^Quiero buscar (\w+)$/, async (producto) => {
   await BuscadorEbay.bucarProducto(producto);
 });
 
 
-Then('Deberiamos ver resultados en la página de búsqueda', async () => {
+Then('Obtenemos la cantidad de resultados', async () => {
   const numberOfResults = await BuscadorEbay.cantidadDeResultados();
   console.log(`Numero de elementos encontrados: ${numberOfResults}`);
 });
